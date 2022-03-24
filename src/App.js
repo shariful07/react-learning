@@ -1,19 +1,18 @@
-import Counter from "./Counter";
-import CounterHook from "./CounterHook";
-import "./App.css";
+import Counter from "./components/Counter";
+import CounterHook from "./components/CounterHook";
+import Header from "./components/Header";
+import FeedbackItem from "./components/FeedbackItem";
 
 function App() {
     return (
-        <div className="App">
-            <h1>My App</h1>
-
-
-            Counter using class component
+        <>
+            <Header />
+            <div className="container">
+                <FeedbackItem />
+            </div>
             <Counter initialCount={1}></Counter>
-
-            Counter using function component
             <CounterHook initialCount={10}></CounterHook>
-        </div>
+        </>
     );
 }
 

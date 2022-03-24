@@ -1,38 +1,37 @@
 import React, { Component } from "react";
 
 export default class Counter extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        
+
         this.state = {
-            count: props.initialCount
-        }
+            count: props.initialCount,
+        };
     }
 
-    render(){
+    render() {
         return (
             <div>
-                <button onClick={()=>this.changeCount(-1)}>-</button>
+                <div className="">Counter using class component</div>
+                <button onClick={() => this.changeCount(-1)}>-</button>
                 <span>{this.state.count}</span>
-                <button onClick={()=>this.changeCount(1)}>+</button>
+                <button onClick={() => this.changeCount(1)}>+</button>
             </div>
-        )
+        );
     }
 
-    changeCount(amount){
-        this.setState( 
-            prevState => {
-              return { count: prevState.count + amount }
-            }
-        );
+    changeCount(amount) {
+        this.setState((prevState) => {
+            return { count: prevState.count + amount };
+        });
     }
 }
 
 /**
-	 * Get personalized items in checklist
-	 *
-	 * @return array
-	 */
+ * Get personalized items in checklist
+ *
+ * @return array
+ */
 
 //  public function getPersonalizedItems( int $userId ): array {
 //     $defaultChecklistId = 1;
@@ -46,7 +45,5 @@ export default class Counter extends Component {
 //     }
 //     return $personalizedChecklistItemTypes;
 // }
-
-
 
 // ./private/vendor/bin/phinx create CreateChecklist

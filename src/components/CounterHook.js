@@ -9,6 +9,7 @@ export default function CounterHook(props) {
     }
     return (
         <div>
+            <div className="">Counter using function component</div>
             <button onClick={() => changeCount(-1)}>-</button>
             <span>{state}</span>
             <button onClick={() => changeCount(1)}>+</button>
