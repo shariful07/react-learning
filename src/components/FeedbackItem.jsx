@@ -1,22 +1,15 @@
-import { useState } from "react";
+import { FaTimes } from "react-icons/fa";
+import Card from "./shared/Card";
 
-function FeedbackItem() {
-    const [rating, setRating] = useState(7);
-    const [text, setText] = useState("This is a example of feedback item");
-
-    const handleClick = () => {
-        setRating((prev) => {
-            console.log(prev);
-            return prev + 1;
-        });
-    };
-
+function FeedbackItem({ item, handleDelete }) {
     return (
-        <div className="card">
-            <div className="num-display">{rating}</div>
-            <div className="text-display">{text}</div>
-            <button onClick={handleClick}>Click</button>
-        </div>
+        <Card reverse={false}>
+            <div className="num-display">{item.rating}</div>
+            <button onClick={() => handleDelete(item.id)} className="close">
+                <FaTimes color="purple" />
+            </button>
+            <div className="text-display">{item.text}</div>
+        </Card>
     );
 }
 
